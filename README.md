@@ -16,7 +16,7 @@ STAR --runThreadN 20 \
      --genomeFastaFiles /path/to/Mus_musculus.GRCm39.dna.primary_assembly.fa \
      --sjdbGTFfile /path/to/Mus_musculus.GRCm39.105.chr.gtf \
      --sjdbOverhang 149
-
+```
 4. **Alternative Splicing Analysis**: `MAJIQ` (Modeling Alternative Junction Inclusion Quantification)
 5. **Specific AS Calculation**: Custom scripts for downstream AS filtering and quantification.
 
@@ -39,3 +39,4 @@ Format of `samplelist.txt` (Tab or space separated):
 /path/to/sample2_dir    GroupA
 /path/to/sample3_dir    GroupB
 /path/to/sample4_dir    GroupB
+```
