@@ -3,7 +3,7 @@
 # This script is designed to run after 'preprocess.sh'
 # It automatically reads the paired-end outputs (_1P.fastq.gz, _2P.fastq.gz) from Trimmomatic.
 
-# 默认参数
+# default parameters
 TRIM_DIR=""
 OUTPUT_DIR=""
 INDEX_DIR=""
@@ -90,11 +90,11 @@ echo "========================================="
 # Mapping
 # ---------------------------------------------------------
 
-# 按行读取 samplelist，只提取第一列的 sample_name
+# read samplelist first column
 while IFS=$'\t' read -r sample_name group fastq_files; do
     if [[ -z "$sample_name" ]]; then continue; fi
 
-    # 精准拼接在 preprocess.sh 中由 Trimmomatic 生成的配对文件路径
+    # find the input fastq file from preprocess.sh
     fq1="${TRIM_DIR}/${sample_name}_trim_1P.fastq.gz"
     fq2="${TRIM_DIR}/${sample_name}_trim_2P.fastq.gz"
 
