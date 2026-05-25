@@ -1,4 +1,4 @@
-# m5C_splicing: A Computational Framework for Condition-Specific Alternative Splicing
+# m5C_splicing: A computational framework for condition-specific alternative splicing
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
