@@ -5,14 +5,14 @@
 # Sample list format (Tab-separated):
 # SampleName    GroupName    Read1.fastq.gz,Read2.fastq.gz
 
-# 默认参数初始化
+# default parametres
 OUTPUT_DIR=""
 THREADS=1
 SAMPLELIST=""
 WHERETRIM=""
 ADAPTERS=""
 
-# 帮助文档
+# help
 usage() {
     echo "========================================================================="
     echo "Usage: bash $0 -o <output_dir> -s <samplelist> -a <adapters.fa> [options]"
@@ -30,12 +30,12 @@ usage() {
     exit 1
 }
 
-# 如果没有任何参数，显示帮助
+# if no any para,print help
 if [ $# -eq 0 ]; then
     usage
 fi
 
-# 解析参数
+# parameters
 while getopts "o:t:s:a:m:h" opt; do
 	case $opt in
 		o) OUTPUT_DIR="$OPTARG" ;;
@@ -68,17 +68,17 @@ if [ ! -f "$ADAPTERS" ]; then
 	exit 1
 fi
 
-# 智能识别 Trimmomatic (Conda 或者 Jar)
+# find where trimmomatic (Conda/Jar)
 TRIM_CMD=""
 if [ -n "$WHERETRIM" ]; then
-    # 用户明确提供了 jar 包路径
+    # jar bao path
     if [ ! -f "$WHERETRIM" ]; then
         echo "Error: Trimmomatic jar not found at $WHERETRIM"
         exit 1
     fi
     TRIM_CMD="java -jar $WHERETRIM"
 elif command -v trimmomatic &> /dev/null; then
-    # 用户没有提供 jar，但在环境变量(如 Conda)中找到了 trimmomatic
+    # no .jar, but find trimmomatic from environment
     TRIM_CMD="trimmomatic"
 else
     echo "Error: Trimmomatic is not found in PATH and no jar path was provided (-m)."
