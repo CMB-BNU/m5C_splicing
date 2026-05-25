@@ -2,7 +2,7 @@
 
 This repository contains a customized bioinformatics pipeline for RNA-seq data analysis, specifically designed to identify and quantify differential Alternative Splicing (AS) events between two conditions (e.g., Condition A vs. Condition B) across multiple biological replicates.
 
-## 🌟 Pipeline Overview
+## Pipeline Overview
 The workflow consists of the following core steps:
 1. **Preprocessing & Quality Control**: `FastQC` and `Trimmomatic`
 2. **Read Mapping**: `STAR` (Spliced Transcripts Alignment to a Reference)
