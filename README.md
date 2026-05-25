@@ -9,7 +9,7 @@ The workflow consists of the following core steps:
 3. **Alternative Splicing Analysis**: `MAJIQ` (Modeling Alternative Junction Inclusion Quantification)
 4. **Specific AS Calculation**: Custom scripts for downstream AS filtering and quantification.
 
-## 🛠 Prerequisites
+## Prerequisites
 Ensure the following tools are installed and available in your system's `$PATH`:
 * [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 * [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) (Default path in script: `~/soft/Trimmomatic-0.39/trimmomatic-0.39.jar`)
@@ -17,7 +17,7 @@ Ensure the following tools are installed and available in your system's `$PATH`:
 * [MAJIQ](https://majiq.biociphers.org/)
 * Java, Python 3, and basic shell utilities (awk, bash).
 
-## 🚀 Usage
+## Usage
 
 ### 1. Data Preparation
 Create a `samplelist.txt` file containing the absolute paths to your sample directories and their corresponding group assignments. **Note: Currently, the pipeline strictly supports exactly 2 groups.**
