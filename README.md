@@ -6,8 +6,19 @@ This repository contains a customized bioinformatics pipeline for RNA-seq data a
 The workflow consists of the following core steps:
 1. **Preprocessing & Quality Control**: `FastQC` and `Trimmomatic`
 2. **Read Mapping**: `STAR` (Spliced Transcripts Alignment to a Reference)
-3. **Alternative Splicing Analysis**: `MAJIQ` (Modeling Alternative Junction Inclusion Quantification)
-4. **Specific AS Calculation**: Custom scripts for downstream AS filtering and quantification.
+#### 2.1 Build STAR Index (One-time setup)
+Before running the mapping script, you must generate a STAR genome index for your specific reference genome. *Note: `--sjdbOverhang` should generally be set to (ReadLength - 1).*
+
+```bash
+STAR --runThreadN 20 \
+     --runMode genomeGenerate \
+     --genomeDir /path/to/star_index/ \
+     --genomeFastaFiles /path/to/Mus_musculus.GRCm39.dna.primary_assembly.fa \
+     --sjdbGTFfile /path/to/Mus_musculus.GRCm39.105.chr.gtf \
+     --sjdbOverhang 149
+
+4. **Alternative Splicing Analysis**: `MAJIQ` (Modeling Alternative Junction Inclusion Quantification)
+5. **Specific AS Calculation**: Custom scripts for downstream AS filtering and quantification.
 
 ## Prerequisites
 Ensure the following tools are installed and available in your system's `$PATH`:
